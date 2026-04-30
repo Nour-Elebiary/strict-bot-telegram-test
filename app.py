@@ -32,7 +32,7 @@ def upload_all_docs():
         file_path = os.path.join(DATA_DIR, filename)
         print(f"Uploading {filename} to Gemini...")
         
-        uploaded_file = client.files.upload(path=file_path)
+        uploaded_file = client.files.upload(file=file_path)
         
         # Wait for processing
         while uploaded_file.state.name == "PROCESSING":
